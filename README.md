@@ -19,4 +19,4 @@ Para mantener la web ligera, rápida y fácil de mantener, utilicé:
 Este es un proyecto unipersonal. Busco transmitir transparencia y un trato directo "de igual a igual" con el dueño de la empresa, evitando tecnicismos innecesarios y enfocándome en soluciones prácticas.
 
 ---
-*Desarrollado por Enrique Saracco- 2026*
+*Desarrollado por Enrique Saracco - 2026*
