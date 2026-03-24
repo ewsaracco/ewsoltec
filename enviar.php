@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($destinatario, $asunto, $contenido, $headers)) {
         // Si sale bien, tira un alerta y vuelve al inicio
         echo "<script>
-                alert('Mensaje enviado con éxito. Me pondré en contacto pronto.');
+                alert('Mensaje enviado con éxito.');
                 window.location.href='index.html';
               </script>";
     } else {
