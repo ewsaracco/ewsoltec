@@ -1,0 +1,200 @@
+/* DISEÑO UNIFICADO - GRIS CARBÓN #3D3D3D */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.8;
+    background-color: #3d3d3d; /* EL FONDO QUE TE GUSTÓ */
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #3d3d3d;
+    padding: 4rem 20px;
+    text-align: center;
+    border-bottom: 1px solid #4a4a4a;
+}
+
+.logo {
+    max-height: 160px; /* Tamaño grande y visible */
+    width: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.4));
+}
+
+.slogan {
+    color: #cccccc;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav {
+    background: #2b2b2b;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* SECCIONES */
+.contenedor-reducido {
+    max-width: 800px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* TARJETAS */
+.tarjetas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.tarjeta {
+    background: #4a4a4a; /* Gris un toque más claro que el fondo */
+    border: 1px solid #555;
+    border-radius: 12px;
+    width: 280px;
+    padding: 30px;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    background: #555555;
+}
+
+.icono-servicio {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* CONTACTO */
+.seccion-contacto {
+    background-color: #333333;
+    padding: 60px 20px;
+}
+
+.contenedor-formulario {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: #4a4a4a;
+    border: 1px solid #666;
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.boton-enviar {
+    background: #ffffff;
+    color: #333;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 800;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.boton-enviar:hover {
+    background: #cccccc;
+}
+
+footer {
+    background: #1a1a1a;
+    color: #777;
+    text-align: center;
+    padding: 40px;
+}
+
+/* --- OPTIMIZACIÓN PARA CELULARES --- */
+
+@media (max-width: 768px) {
+    /* Ajustamos el tamaño del logo para que no ocupe toda la pantalla */
+    .logo {
+        max-height: 120px;
+    }
+
+    .slogan {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    /* El menú: de horizontal a vertical o con más espacio */
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Las tarjetas: una abajo de la otra y más anchas */
+    .tarjetas-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta {
+        width: 90%; /* Que ocupen casi todo el ancho del celu */
+        max-width: none;
+        box-sizing: border-box;
+    }
+
+    /* El texto de perfil con menos margen lateral */
+    .contenedor-reducido {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Formulario: que los inputs sean cómodos para el dedo */
+    .contenedor-formulario {
+        width: 95%;
+    }
+}
