@@ -18,11 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $asunto = "Nueva consulta web de: $nombre";
 
     // 3. Diseño del contenido del mail
-    $contenido = "Detalles del contacto de EWSolTec:\n\n";
+    $contenido = "NUEVA CONSULTA DESDE EWSOLTEC.COM.AR\n";
+    $contenido .= "==========================================\n\n";
     $contenido .= "Nombre: $nombre\n";
     $contenido .= "Email: $email\n";
-    $contenido .= "Teléfono: " . ($telefono ?: "No especificado") . "\n\n";
+    $contenido .= "Teléfono: " . ($telefono ?: "No especificado") . "\n";
+    $contenido .= "------------------------------------------\n";
     $contenido .= "Mensaje:\n$mensaje\n";
+    $contenido .= "==========================================\n";
 
     // 4. Cabeceras (Importante: 'From' debe ser un mail de tu propio dominio)
     $headers = "From: contacto@ewsoltec.com.ar" . "\r\n";
