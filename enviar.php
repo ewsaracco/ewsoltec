@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contenido .= "Mensaje:\n$mensaje\n";
 
     // 4. Cabeceras (Importante: 'From' debe ser un mail de tu propio dominio)
-    $headers = "From: esaracco@ewsoltec.com.ar" . "\r\n";
+    $headers = "From: contacto@ewsoltec.com.ar" . "\r\n";
     $headers .= "Reply-To: $email" . "\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
