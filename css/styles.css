@@ -1,42 +1,26 @@
-/* DISEÑO UNIFICADO - GRIS CARBÓN #3D3D3D */
+/* ==========================================================
+   EWSolTec - CONFIGURACIÓN GENERAL (BASE)
+   ========================================================= */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    line-height: 1.8;
-    background-color: #3d3d3d; /* EL FONDO QUE TE GUSTÓ */
+    line-height: 1.6;
+    background-color: #3d3d3d; 
     color: #ffffff;
     scroll-behavior: smooth;
 }
 
-header {
-    background: #3d3d3d;
-    padding: 4rem 20px;
-    text-align: center;
-    border-bottom: 1px solid #4a4a4a;
-}
-
-.logo {
-    max-height: 160px; /* Tamaño grande y visible */
-    width: auto;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.4));
-}
-
-.slogan {
-    color: #cccccc;
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
+/* ==========================================================
+   CABECERA (NAV & HEADER)
+   ========================================================= */
 nav {
     background: #2b2b2b;
     padding: 1rem;
-    position: sticky;
+    position: sticky; /* Siempre visible al bajar */
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 100%;
 }
 
 nav ul {
@@ -45,7 +29,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 nav a {
@@ -59,142 +43,221 @@ nav a:hover {
     color: #ffffff;
 }
 
-/* SECCIONES */
+header {
+    background: #3d3d3d;
+    /* 100vh menos el alto aproximado del nav */
+    height: calc(100vh - 60px); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    max-height: 180px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.4));
+}
+
+.slogan {
+    color: #cccccc;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* ==========================================================
+   SECCIONES PANTALLA COMPLETA
+   ========================================================= */
+section, 
+.seccion-contacto {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 80px 20px;
+    /* Evita que el Nav tape el título al clickear */
+    scroll-margin-top: 60px; 
+}
+
+/* ==========================================================
+   TIPOGRAFÍA Y CONTENIDO
+   ========================================================= */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.subtitulo-contacto {
+    text-align: center;
+    margin-top: -15px; 
+    margin-bottom: 35px;
+    color: #bbbbbb;
+    font-weight: 400;
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
 .contenedor-reducido {
     max-width: 800px;
-    margin: 60px auto;
     text-align: center;
-    padding: 0 20px;
 }
 
-.titulo-seccion {
-    text-align: center;
-    margin-top: 40px;
-}
-
-/* TARJETAS */
 .tarjetas-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .tarjeta {
-    background: #4a4a4a; /* Gris un toque más claro que el fondo */
+    background: #4a4a4a;
     border: 1px solid #555;
     border-radius: 12px;
     width: 280px;
     padding: 30px;
-    transition: transform 0.3s;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 .tarjeta:hover {
     transform: translateY(-10px);
     background: #555555;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border-color: #ffffff;
 }
 
 .icono-servicio {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    display: block;
 }
 
-/* CONTACTO */
-.seccion-contacto {
-    background-color: #333333;
-    padding: 60px 20px;
-}
-
+/* ==========================================================
+   FORMULARIO
+   ========================================================= */
 .contenedor-formulario {
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
 }
 
 form label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
+    color: #cccccc;
 }
 
 input, textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-bottom: 20px;
     background: #4a4a4a;
     border: 1px solid #666;
     border-radius: 8px;
     color: white;
     box-sizing: border-box;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+    background: #555555;
 }
 
 .boton-enviar {
     background: #ffffff;
     color: #333;
     border: none;
-    padding: 15px;
+    padding: 16px;
     border-radius: 8px;
     font-weight: 800;
     cursor: pointer;
     width: 100%;
     transition: 0.3s;
+    text-transform: uppercase;
 }
 
 .boton-enviar:hover {
     background: #cccccc;
+    transform: scale(1.02);
 }
 
+/* ==========================================================
+   FOOTER (REDES)
+   ========================================================= */
 footer {
     background: #1a1a1a;
-    color: #777;
+    color: #888;
     text-align: center;
-    padding: 40px;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    border-top: 1px solid #222;
 }
 
-/* --- OPTIMIZACIÓN PARA CELULARES --- */
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    color: #bbbbbb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
+.instagram-link:hover {
+    color: #ffffff;
+}
+
+.insta-svg {
+    margin-right: 8px;
+    fill: #888;
+    transition: all 0.3s ease;
+    transform: translateY(-2px); /* Tu ajuste de precisión */
+}
+
+.instagram-link:hover .insta-svg {
+    fill: #ffffff;
+    transform: translateY(-2px) scale(1.1);
+}
+
+/* ==========================================================
+   VERSION MOBILE (RESPONSIVE)
+   ========================================================= */
 @media (max-width: 768px) {
-    /* Ajustamos el tamaño del logo para que no ocupe toda la pantalla */
-    .logo {
-        max-height: 120px;
+    header, section, .seccion-contacto {
+        min-height: auto; 
+        padding: 80px 15px;
     }
 
-    .slogan {
-        font-size: 0.9rem;
-        padding: 0 10px;
+    header {
+        height: calc(100vh - 80px); /* Ajuste para el nav en mobile */
     }
 
-    /* El menú: de horizontal a vertical o con más espacio */
+    h2 {
+        font-size: 1.7rem;
+    }
+
     nav ul {
         flex-direction: column;
         gap: 15px;
         align-items: center;
     }
 
-    /* Las tarjetas: una abajo de la otra y más anchas */
-    .tarjetas-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .tarjeta {
-        width: 90%; /* Que ocupen casi todo el ancho del celu */
-        max-width: none;
-        box-sizing: border-box;
-    }
-
-    /* El texto de perfil con menos margen lateral */
-    .contenedor-reducido {
-        margin: 30px auto;
-        padding: 0 15px;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    /* Formulario: que los inputs sean cómodos para el dedo */
-    .contenedor-formulario {
-        width: 95%;
+        width: 100%;
     }
 }
