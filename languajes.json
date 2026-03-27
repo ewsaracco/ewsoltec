@@ -1,0 +1,81 @@
+{
+  "es": {
+    "nav": {
+      "home": "Inicio",
+      "approach": "Mi Enfoque",
+      "services": "Servicios",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "slogan": "Diagnóstico y Asesoramiento Tecnológico"
+    },
+    "approach": {
+      "title": "Asesoramiento Directo y Confiable",
+      "text": "Con más de 35 años de experiencia en el área de tecnología de la información, brindo asistencia a PyMEs y profesionales para relevar el estado de su infraestructura tecnológica con el objetivo de proporcionar diagnósticos claros para evitar pérdidas de tiempo y asegurar que la tecnología acompañe el crecimiento de su negocio. Así como acompañarlos en las migraciones que pudieran necesitar para alcanzar esas metas."
+    },
+    "services": {
+      "title": "Servicios de Consultoría",
+      "hw_title": "Hardware",
+      "hw_desc": "Diagnóstico de equipamiento y estaciones de trabajo. Asesoramiento en actualizaciones, compras y procesos de migración.",
+      "net_title": "Redes",
+      "net_desc": "Relevamiento de conectividad y soluciones para un entorno de trabajo estable y libre de interrupciones.",
+      "sw_title": "Software",
+      "sw_desc": "Asesoramiento en herramientas de gestión y optimización para mejorar la productividad operativa."
+    },
+    "contact": {
+      "title": "Contacto",
+      "subtitle": "Escriba a contacto@ewsoltec.com.ar o complete el formulario.",
+      "label_name": "Nombre",
+      "placeholder_name": "Nombre y apellido",
+      "label_email": "Email",
+      "label_phone": "Teléfono",
+      "placeholder_phone": "Número de contacto (opcional)",
+      "label_message": "Mensaje",
+      "placeholder_msg": "¿Qué problemas o dudas tiene sobre sus sistemas?",
+      "btn_send": "Enviar Mensaje"
+    },
+    "footer": {
+      "copy": "© 2026 EWSolTec - Consultoría Tecnológica"
+    }
+  },
+
+"en": {
+  "nav": {
+    "home": "Home",
+    "approach": "My Approach",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "slogan": "Technology Assessment and Advisory"
+  },
+  "approach": {
+    "title": "Direct and Reliable Advisory",
+    "text": "With over 35 years of experience in the information technology field, I provide support to small and medium-sized businesses and professionals to assess the state of their technology infrastructure. My goal is to deliver clear diagnostics that help avoid wasted time and ensure technology supports business growth, as well as guide them through any migrations needed to achieve those goals."
+  },
+  "services": {
+    "title": "Consulting Services",
+    "hw_title": "Hardware",
+    "hw_desc": "Equipment and workstation diagnostics. Guidance on upgrades, purchasing, and migration processes.",
+    "net_title": "Networking",
+    "net_desc": "Connectivity assessment and solutions for a stable, interruption-free work environment.",
+    "sw_title": "Software",
+    "sw_desc": "Advisory on management tools and optimization to improve operational productivity."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Email contacto@ewsoltec.com.ar or fill out the form.",
+    "label_name": "Name",
+    "placeholder_name": "Full name",
+    "label_email": "Email",
+    "label_phone": "Phone",
+    "placeholder_phone": "Contact number (optional)",
+    "label_message": "Message",
+    "placeholder_msg": "What issues or questions do you have about your systems?",
+    "btn_send": "Send Message"
+  },
+  "footer": {
+    "copy": "© 2026 EWSolTec - Technology Consulting"
+  }
+}
+}

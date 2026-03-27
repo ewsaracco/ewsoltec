@@ -61,7 +61,8 @@
             <h4 class="subtitulo-contacto">Escriba a contacto@ewsoltec.com.ar o complete el formulario.</h4>
             
             <div class="contenedor-formulario">
-                <form action="send.php" method="POST">
+                
+                <form action="https://formspree.io/f/xeepobbb" method="POST">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
 
@@ -74,6 +75,8 @@
                     <label for="mensaje">Mensaje</label>
                     <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿Qué problemas o dudas tiene sobre sus sistemas?" required></textarea>
 
+                    <input type="hidden" name="_subject" value="Nueva consulta web EWSolTec">
+                    
                     <button type="submit" class="boton-enviar">Enviar Mensaje</button>
                 </form>
             </div>
