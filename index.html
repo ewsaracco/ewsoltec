@@ -58,11 +58,13 @@
 
         <section id="contacto" class="seccion-contacto">
             <h2>Contacto</h2>
-            <h4 class="subtitulo-contacto">Escriba a contacto@ewsoltec.com.ar o complete el formulario.</h4>
+            <h4 class="subtitulo-contacto">
+                Escriba a <a href="mailto:contacto@ewsoltec.com.ar" style="color: inherit; text-decoration: underline;">contacto@ewsoltec.com.ar</a> o complete el formulario.
+            </h4>
             
             <div class="contenedor-formulario">
                 
-                <form action="https://formspree.io/f/xeepobbb" method="POST">
+                <form id="formulario-de-contacto">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
 
@@ -77,7 +79,9 @@
 
                     <input type="hidden" name="_subject" value="Nueva consulta web EWSolTec">
                     
-                    <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+                    <button type="submit" id="boton-enviar" class="boton-enviar">Enviar</button>
+                    
+                    <div id="mensaje-estado" style="display:none; margin-top:20px; padding:15px; border-radius:5px; text-align:center; font-weight:bold;"></div>
                 </form>
             </div>
         </section>
@@ -94,6 +98,61 @@
             </a>
         </div>
     </footer>
+
+<script>
+  var form = document.getElementById("formulario-de-contacto");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("mensaje-estado");
+    var boton = document.getElementById("boton-enviar");
+    var data = new FormData(event.target);
+
+    boton.disabled = true;
+    boton.innerText = "Enviando...";
+    status.style.display = "none";
+
+    fetch("https://formspree.io/f/xeepobbb", {
+      method: 'POST',
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "¡Gracias! Su mensaje fue enviado con éxito. Será contactado lo antes posible.";
+        status.style.backgroundColor = "#d4edda"; 
+        status.style.color = "#155724";           
+        status.style.border = "1px solid #c3e6cb";
+        status.style.display = "block";
+        form.reset();
+        boton.innerText = "Enviado";
+      } else {
+        response.json().then(data => {
+          status.style.backgroundColor = "#f8d7da";
+          status.style.color = "#721c24";
+          status.style.border = "1px solid #f5c6cb";
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            status.innerHTML = "¡Hubo un problema al enviar el formulario!";
+          }
+          status.style.display = "block";
+          boton.disabled = false;
+          boton.innerText = "Reintentar";
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Error de conexión. Por favor, intente más tarde.";
+      status.style.backgroundColor = "#fff3cd";
+      status.style.color = "#856404";
+      status.style.display = "block";
+      boton.disabled = false;
+      boton.innerText = "Reintentar";
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
 
 </body>
 </html>
